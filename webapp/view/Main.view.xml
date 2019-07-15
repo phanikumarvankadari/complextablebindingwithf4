@@ -1,0 +1,60 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.ui5.table.binding.TaBinding.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml">
+			<Page title="Categories">
+				<content>
+					
+					<Table items="{MDL1>/}" id="tab">
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{MDL1>CategoryID}" ></Text>
+										<Text text="{MDL1>CategoryName}"></Text>
+										<Select items="{path:'MDL1>Products/results/',sorter: { path: 'ProductID' },
+										templateShareable:true}" forceSelection="false" change="bindOrders">
+											<items>
+											<core:ListItem key="{MDL1>ProductID}" text="{MDL1>ProductName}" ></core:ListItem>
+											</items>
+										</Select>
+<!--										<Select >
+											<items>
+											<core:ListItem id='phani' key="{MDL1>OrderID}" text="{MDL1>OrderID}" ></core:ListItem>
+											</items>
+										</Select>
+-->										
+											<Input placeholder="SelectOrder" showValueHelp="true" 
+												valueHelpRequest="onf4Order"  valueHelpOnly="true"
+												value ="{MDL1>selectedOrder}"
+												> </Input>
+						
+									</cells>
+								</ColumnListItem>	
+							</items>
+							<columns>
+								<Column>
+									<Text text="Id"></Text>
+								</Column>
+								<Column>
+									<Text text="Name"></Text>
+								</Column>
+									<Column>
+									<Text text="Products"></Text>
+								</Column>
+									<Column>
+									<Text text="Orders"></Text>
+								</Column>
+								
+								
+								
+								
+							</columns>
+					</Table>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button text="debug" press="debug1"></Button>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+</mvc:View>

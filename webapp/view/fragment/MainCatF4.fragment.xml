@@ -1,0 +1,20 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog noDataText="No Orders Found" title="Select" 	confirm="onMainCatPress"
+			>
+		<items>
+			<ColumnListItem detailPress="onMainCatPress" id="cliItem">
+				<cells>
+					<Text text="{MDL1>OrderID}"></Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+		<columns>
+			<Column>
+				<header>
+					<Text text="Order Id"/>
+				</header>
+			</Column>
+			
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
